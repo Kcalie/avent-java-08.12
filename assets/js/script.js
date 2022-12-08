@@ -41,7 +41,6 @@ $(document).ready(function(){
                 let son3 = document.createElement('audio');
                 son3.src = "assets/son/gagne.mp3"
                 son3.play()
-                return;
 
             },'text');
         } else {
