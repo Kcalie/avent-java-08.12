@@ -6,8 +6,8 @@ $(document).ready(function(){
         // On récupère l'élement
         let element = $(event.target);
         // On récupère la date du jour
-        let date = new Date();
-        let today_day = date.getDate();
+        let date = new Date(); // recup la date du jour et on la met dans une variable
+        let today_day = date.getDate(); // getDate() donne le num du ojur du mois (8 dec = 8)
         let today_month = date.getMonth();
 
         // On récupère ensuite le jour de la case
@@ -36,6 +36,11 @@ $(document).ready(function(){
                     fadeDuration:200,
                     fadeDelay: 0.30
                 });
+                // Son
+                let sonFini = document.createElement('audio');
+                sonFini.src = "assets/son/gagne.mp3"
+                sonFini.play()
+                return;
 
             },'text');
         } else {
@@ -44,14 +49,41 @@ $(document).ready(function(){
                 $('#pass-day-modal').modal({
                     fadeDuration: 200
                 });
+                // Son
+                let sonPerdu = document.createElement('audio');
+                sonPerdu.src = "assets/son/perdu.mp3"
+                sonPerdu.play()
+                return;
             }
             else{
                 $('#no-day-modal').modal({
                     fadeDuration: 200
                 });
-            }
-
-                    
+                // Son
+                let sonPerdu = document.createElement('audio');
+                sonPerdu.src = "assets/son/clic.mp3"
+                sonPerdu.play()
+                return;
+            }                   
         }
+        
     });
 });
+// bonhomme qui bouge sur la page
+function papaNoel(){
+    let papa = document.getElementById('papanoel');
+    let position_top = Math.floor (Math.random()*500);
+    let position_bottom = Math.floor (Math.random()*600);
+    papa.style.top = position_top+'px';
+    papa.style.left = position_bottom+'px';
+
+    let bouger = setTimeout("papaNoel()",1000);
+}
+papaNoel();
+
+
+
+
+
+
+
