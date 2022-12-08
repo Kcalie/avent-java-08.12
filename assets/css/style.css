@@ -12,6 +12,21 @@ h1{
     width: 90%;
     padding: 1%;
     margin: auto;
-    background-image: url(assets/img/3.jpg);
+    background-image: url(../img/3.jpg);
     background-size: cover;
+}
+.day{
+    display: inline-block;
+    vertical-align: middle;
+    font: normal 2em 'Ranga' ,cursive, sans-serif;
+    text-align: center;
+    width: 3em;
+    line-height: 3em;
+    margin: 10px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, .9);
+    background: rgba(0, 0, 0, .2);
+    border: 3px solid rgba(0, 0, 0, .1);
+    border-radius: 5px;
+    transition: 0.5s;
 }
