@@ -27,7 +27,8 @@ $(document).ready(function(){
         // Affichage des modals
         if(show_day) {
             // On charge le cadeau
-            $.get(params.data_folder+day_request+".html",function(data){
+            let aleatoire = Math.floor((Math.random()*25));
+            $.get(params.data_folder+aleatoire+".html",function(data){
                 // On met à jour notre modal avec le code HTML
                 $('.day-content').html(data);
                 // On ouvre la modal
@@ -37,9 +38,9 @@ $(document).ready(function(){
                     fadeDelay: 0.30
                 });
                 // Son
-                let sonFini = document.createElement('audio');
-                sonFini.src = "assets/son/gagne.mp3"
-                sonFini.play()
+                let son3 = document.createElement('audio');
+                son3.src = "assets/son/gagne.mp3"
+                son3.play()
                 return;
 
             },'text');
@@ -50,26 +51,26 @@ $(document).ready(function(){
                     fadeDuration: 200
                 });
                 // Son
-                let sonPerdu = document.createElement('audio');
-                sonPerdu.src = "assets/son/perdu.mp3"
-                sonPerdu.play()
-                return;
+                let son = document.createElement('audio');
+                son.src = "assets/son/perdu.mp3"
+                son.play()
             }
             else{
                 $('#no-day-modal').modal({
                     fadeDuration: 200
                 });
                 // Son
-                let sonPerdu = document.createElement('audio');
-                sonPerdu.src = "assets/son/clic.mp3"
-                sonPerdu.play()
-                return;
+                let son2 = document.createElement('audio');
+                son2.src = "assets/son/clic.mp3"
+                son2.play()
             }                   
         }
         
     });
 });
+
 // bonhomme qui bouge sur la page
+
 function papaNoel(){
     let papa = document.getElementById('papanoel');
     let position_top = Math.floor (Math.random()*500);
@@ -80,6 +81,7 @@ function papaNoel(){
     let bouger = setTimeout("papaNoel()",1000);
 }
 papaNoel();
+
 
 
 
