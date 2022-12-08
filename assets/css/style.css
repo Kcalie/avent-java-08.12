@@ -1,0 +1,17 @@
+body{
+    font-family: 'Ranga', cursive, sans-serif;
+}
+h1{
+    font-size: 4em;
+}
+#title{
+    margin: -5px 0;
+}
+.calendar{
+    max-width: 1000px;
+    width: 90%;
+    padding: 1%;
+    margin: auto;
+    background-image: url(assets/img/3.jpg);
+    background-size: cover;
+}
