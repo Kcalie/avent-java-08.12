@@ -20,7 +20,7 @@ $(document).ready(function(){
         if(today_month != month_request) {
             show_day = true;
         } else {
-            if(day_request <= today_day) {
+            if(day_request == today_day) {
                 show_day = true;
             }
         }
@@ -36,12 +36,22 @@ $(document).ready(function(){
                     fadeDuration:200,
                     fadeDelay: 0.30
                 });
+
             },'text');
         } else {
-            // Si on est pas sur le bon jour on ouvre la modal erreur
-            $('#no-day-modal').modal({
-                fadeDuration: 200
-            });
+            // Si on selectionne un jour deja passé
+            if(day_request < today_day) {
+                $('#pass-day-modal').modal({
+                    fadeDuration: 200
+                });
+            }
+            else{
+                $('#no-day-modal').modal({
+                    fadeDuration: 200
+                });
+            }
+
+                    
         }
     });
 });
